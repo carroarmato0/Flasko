@@ -5,7 +5,7 @@ FROM centos:7
 LABEL maintainer="carroarmato0@gmail.com"
 
 # Update system and install essentials
-RUN yum -y install epel-release && yum -y update && yum -y install python python-pip
+RUN yum -y install epel-release && yum -y update && yum -y install python python-pip && yum -y clean all
 
 # Leverage Docker cache to install actual application dependencies
 COPY ./src/requirements.txt /app/requirements.txt
