@@ -8,16 +8,10 @@ LABEL maintainer="carroarmato0@gmail.com"
 ENV HELLO_SUBJECT="World"
 
 # Update system and install essentials
-RUN yum -y install epel-release && yum -y update && yum -y install python python-pip && yum -y clean all
-
-# Leverage Docker cache to install actual application dependencies
-COPY ./src/requirements.txt /app/requirements.txt
+RUN yum -y update && yum -y install python python-flask python-gunicorn && rm -fr /var/cache/yum
 
 # Change working directory
 WORKDIR /app
-
-# Install application dependencies
-RUN pip install -r requirements.txt
 
 # Copy source code into place
 COPY ./src /app

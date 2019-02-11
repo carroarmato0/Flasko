@@ -3,13 +3,19 @@ A random REST API implemented with Flask
 
 ## Installation
 
-Install pyhton and pip
+The application requires Python, Flask and (optionally) Gunicorn.
 
 ### Centos
 
 ```
-yum -y install epel-release && yum -y update && yum -y install python python-pip
+yum -y update && yum -y install python python-flask python-gunicorn
+cd src
+gunicorn --bind=:8000 flasko:app
 ```
+
+### Others
+
+Ensure Python and PIP are installed.
 
 ```
 cd src
