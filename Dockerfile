@@ -1,5 +1,5 @@
 # Base container
-FROM centos:7
+FROM centos@sha256:184e5f35598e333bfa7de10d8fb1cebb5ee4df5bc0f970bf2b1e7c7345136426
 
 # Administration
 LABEL maintainer="carroarmato0@gmail.com"
